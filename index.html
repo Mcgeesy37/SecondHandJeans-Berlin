@@ -1,0 +1,361 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Second-Hand-Jeans aus Berlin – geprüft, vermessen, premium kuratiert." />
+  <title>Second Hand Jeans Berlin – Premium Vintage Denim</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">⟡</div>
+        <div class="brand-text">
+          <div class="brand-name">Second Hand Jeans Berlin</div>
+          <div class="brand-tagline">Premium Denim · geprüft & vermessen</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">Menü</button>
+
+        <div class="nav-menu" id="navMenu">
+          <a href="#katalog" class="nav-link">Shop</a>
+          <a href="#about" class="nav-link">Über</a>
+          <a href="#service" class="nav-link">Service</a>
+
+          <div class="nav-divider" aria-hidden="true"></div>
+
+          <button class="nav-link nav-link-btn" id="brandsBtn" aria-haspopup="dialog" aria-controls="brandsDialog">
+            Marken <span class="pill" id="brandCountPill">–</span>
+          </button>
+
+          <a href="datenschutz.html" class="nav-link">Datenschutz</a>
+          <a href="impressum.html" class="nav-link">Impressum</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Second-Hand Jeans, die sich wie neu anfühlen.</h1>
+          <p class="lead">
+            Kuratierter Denim aus Berlin. Jede Hose wird geprüft, gereinigt und mit exakten Maßen online gestellt –
+            damit der Fit wirklich passt.
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#katalog">Jetzt entdecken</a>
+            <a class="btn btn-ghost" href="#service">So funktioniert’s</a>
+          </div>
+
+          <div class="usp-row" role="list" aria-label="Vorteile">
+            <div class="usp" role="listitem">
+              <div class="usp-title">Geprüft</div>
+              <div class="usp-text">Zustand & Details transparent</div>
+            </div>
+            <div class="usp" role="listitem">
+              <div class="usp-title">Vermessen</div>
+              <div class="usp-text">Bund, Länge, Rise, Beinweite</div>
+            </div>
+            <div class="usp" role="listitem">
+              <div class="usp-title">Fair</div>
+              <div class="usp-text">Nachhaltig statt Fast Fashion</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Featured Drop">
+          <div class="hero-card-top">
+            <div class="badge">Drop dieser Woche</div>
+            <div class="meta">
+              <div class="meta-title">Neue Stücke online</div>
+              <div class="meta-sub">12–24 Jeans · wöchentlich aktualisiert</div>
+            </div>
+          </div>
+          <div class="hero-card-body">
+            <div class="stat">
+              <div class="stat-num" id="statTotal">–</div>
+              <div class="stat-label">Jeans im Preview-Inventar</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" id="statBrands">–</div>
+              <div class="stat-label">Marken</div>
+            </div>
+            <div class="divider"></div>
+            <p class="small">
+              Hinweis: Dies ist eine <strong>Vorschau</strong>. Später kann euer echtes Inventar (z. B. 800 Stück)
+              automatisiert aus einer Tabelle importiert werden.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="container strip-row">
+        <div class="strip-item">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Gratis Maßberatung per Nachricht</span>
+        </div>
+        <div class="strip-item">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Reservieren & Abholung in Berlin möglich</span>
+        </div>
+        <div class="strip-item">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Jede Hose fotografiert & beschrieben</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="katalog">
+      <div class="container section-head">
+        <h2>Shop</h2>
+        <p class="muted">Filtere nach Marke, Größen (W/L), Fit, Zustand und Preis. Ergebnisse sind paginiert.</p>
+      </div>
+
+      <div class="container shop-layout">
+        <aside class="filters" aria-label="Filter">
+          <div class="filters-head">
+            <div class="filters-title">Filter</div>
+            <button class="link-btn" id="resetBtn" type="button">Zurücksetzen</button>
+          </div>
+
+          <label class="field">
+            <span>Suche</span>
+            <input id="q" type="search" placeholder="z. B. Levi’s 501, W32…" autocomplete="off" />
+          </label>
+
+          <label class="field">
+            <span>Marke</span>
+            <select id="brand"></select>
+          </label>
+
+          <div class="grid-2">
+            <label class="field">
+              <span>W (Bund)</span>
+              <select id="waist"></select>
+            </label>
+            <label class="field">
+              <span>L (Länge)</span>
+              <select id="length"></select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Fit</span>
+            <select id="fit"></select>
+          </label>
+
+          <label class="field">
+            <span>Farbe</span>
+            <select id="color"></select>
+          </label>
+
+          <label class="field">
+            <span>Zustand</span>
+            <select id="condition"></select>
+          </label>
+
+          <div class="grid-2">
+            <label class="field">
+              <span>Preis min (€)</span>
+              <input id="minPrice" inputmode="numeric" type="number" min="0" step="1" placeholder="0" />
+            </label>
+            <label class="field">
+              <span>Preis max (€)</span>
+              <input id="maxPrice" inputmode="numeric" type="number" min="0" step="1" placeholder="200" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Sortierung</span>
+            <select id="sort">
+              <option value="newest">Neu zuerst</option>
+              <option value="price_asc">Preis: aufsteigend</option>
+              <option value="price_desc">Preis: absteigend</option>
+              <option value="brand_asc">Marke: A–Z</option>
+            </select>
+          </label>
+
+          <div class="filters-foot">
+            <div class="muted small" id="resultMeta">–</div>
+            <button class="btn btn-primary" id="applyBtn" type="button">Anwenden</button>
+          </div>
+        </aside>
+
+        <section class="results" aria-label="Ergebnisse">
+          <div class="results-bar">
+            <div class="results-title">
+              <span id="resultsTitle">Alle Jeans</span>
+              <span class="pill" id="resultsCount">–</span>
+            </div>
+            <button class="btn btn-ghost btn-sm" id="openFiltersBtn" type="button">Filter</button>
+          </div>
+
+          <div class="grid" id="grid" aria-live="polite"></div>
+
+          <div class="pager" aria-label="Seitennavigation">
+            <button class="btn btn-ghost btn-sm" id="prevPage" type="button">Zurück</button>
+            <div class="pager-meta" id="pageMeta">–</div>
+            <button class="btn btn-ghost btn-sm" id="nextPage" type="button">Weiter</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" id="service">
+      <div class="container section-head">
+        <h2>Service</h2>
+        <p class="muted">So bleibt es premium – auch bei vielen Artikeln.</p>
+      </div>
+
+      <div class="container cards-3">
+        <div class="info-card">
+          <h3>Maße statt Rätselraten</h3>
+          <p>Jede Hose bekommt echte Maße (cm) + Größen W/L. Damit passt’s beim ersten Mal.</p>
+        </div>
+        <div class="info-card">
+          <h3>Kuratiert & regelmäßig neu</h3>
+          <p>Startseite zeigt Highlights & neue Drops. Der Katalog bleibt clean und schnell.</p>
+        </div>
+        <div class="info-card">
+          <h3>Anfrage statt Checkout (Preview)</h3>
+          <p>Für den Launch könnt ihr mit Reservierung/Anfrage starten – später Checkout integrieren.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container section-head">
+        <h2>Über</h2>
+        <p class="muted">Eine persönliche Second-Hand Auswahl – als eigene Marke gedacht.</p>
+      </div>
+
+      <div class="container about">
+        <div class="about-text">
+          <p>
+            Hier könnt ihr später die Story eurer Mutter erzählen: Warum Denim, wie sie auswählt, wie sie prüft,
+            was “Premium Second-Hand” bedeutet. Das baut Vertrauen auf und macht die Seite zur Marke.
+          </p>
+          <p class="small muted">
+            Tipp: 6–10 hochwertige Fotos (Studio/clean) machen den größten Unterschied.
+          </p>
+        </div>
+
+        <div class="about-panel" aria-label="Kontakt">
+          <div class="badge">Kontakt</div>
+          <div class="about-panel-title">Maßberatung & Reservierung</div>
+          <p class="small muted">
+            In der Preview geht Kontakt per E-Mail. Später: WhatsApp/Instagram oder Formular.
+          </p>
+          <a class="btn btn-primary" href="mailto:kontakt@secondhandjeans-berlin.de?subject=Anfrage%20Second%20Hand%20Jeans%20Berlin">
+            E-Mail senden
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div class="footer-left">
+        <div class="brand-mini">Second Hand Jeans Berlin</div>
+        <div class="small muted">© <span id="year"></span> · Preview für GitHub Pages</div>
+      </div>
+      <div class="footer-right">
+        <a class="footer-link" href="datenschutz.html">Datenschutz</a>
+        <a class="footer-link" href="impressum.html">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Brands Dialog -->
+  <dialog class="dialog" id="brandsDialog" aria-label="Markenübersicht">
+    <div class="dialog-head">
+      <div>
+        <div class="dialog-title">Marken</div>
+        <div class="small muted">Schnell zur Marke springen (setzt Filter).</div>
+      </div>
+      <button class="icon-btn" id="closeBrands" aria-label="Schließen">✕</button>
+    </div>
+    <div class="dialog-body" id="brandsList"></div>
+  </dialog>
+
+  <!-- Product Modal -->
+  <dialog class="dialog" id="productDialog" aria-label="Produktdetails">
+    <div class="dialog-head">
+      <div>
+        <div class="dialog-title" id="pdTitle">–</div>
+        <div class="small muted" id="pdSub">–</div>
+      </div>
+      <button class="icon-btn" id="closeProduct" aria-label="Schließen">✕</button>
+    </div>
+    <div class="dialog-body">
+      <div class="product-modal">
+        <div class="product-photo" id="pdPhoto" aria-hidden="true"></div>
+        <div class="product-info">
+          <div class="price-row">
+            <div class="price" id="pdPrice">–</div>
+            <div class="pill" id="pdCondition">–</div>
+          </div>
+
+          <div class="kv">
+            <div class="kv-row"><div class="k">Größe</div><div class="v" id="pdSize">–</div></div>
+            <div class="kv-row"><div class="k">Fit</div><div class="v" id="pdFit">–</div></div>
+            <div class="kv-row"><div class="k">Farbe</div><div class="v" id="pdColor">–</div></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="kv">
+            <div class="kv-row"><div class="k">Bund (cm)</div><div class="v" id="pdWaist">–</div></div>
+            <div class="kv-row"><div class="k">Innenbein (cm)</div><div class="v" id="pdInseam">–</div></div>
+            <div class="kv-row"><div class="k">Rise (cm)</div><div class="v" id="pdRise">–</div></div>
+            <div class="kv-row"><div class="k">Beinweite (cm)</div><div class="v" id="pdLeg">–</div></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="small muted" id="pdNotes">–</p>
+
+          <div class="modal-actions">
+            <a class="btn btn-primary" id="pdMail" href="#">Anfrage senden</a>
+            <button class="btn btn-ghost" id="pdCopy" type="button">Artikelcode kopieren</button>
+          </div>
+
+          <p class="tiny muted">
+            Hinweis: Dies ist eine Vorschau ohne Checkout. Im Launch könnt ihr Reservierung oder Zahlung integrieren.
+          </p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Mobile Filters Drawer -->
+  <dialog class="dialog drawer" id="filtersDrawer" aria-label="Filter (mobil)">
+    <div class="dialog-head">
+      <div>
+        <div class="dialog-title">Filter</div>
+        <div class="small muted">Wähle Filter und tippe auf Anwenden.</div>
+      </div>
+      <button class="icon-btn" id="closeFilters" aria-label="Schließen">✕</button>
+    </div>
+    <div class="dialog-body">
+      <div id="drawerMount"></div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
