@@ -1,15 +1,19 @@
 /* assets/css/styles.css */
+/* assets/css/styles.css  — NUR den :root Block ersetzen */
 :root{
-  --bg: #0c0d10;
-  --card: #12141a;
-  --card2:#0f1117;
-  --text:#f4f6fb;
-  --muted:#b2bac7;
+  --bg: #07040a;          /* very dark plum/black */
+  --card: #110816;        /* deep purple */
+  --card2:#0e0712;
+  --text:#fff3fb;         /* warm off-white */
+  --muted:#c8b2c2;        /* muted pink/grey */
   --line: rgba(255,255,255,.10);
   --line2: rgba(255,255,255,.06);
-  --accent:#c7ff4a;
-  --accent2:#8ae9ff;
-  --shadow: 0 18px 50px rgba(0,0,0,.45);
+
+  /* NEW: magenta/pink brand accents */
+  --accent:#ff2fb3;       /* magenta pink */
+  --accent2:#a855ff;      /* violet highlight */
+
+  --shadow: 0 18px 50px rgba(0,0,0,.55);
   --radius: 18px;
   --radius2: 14px;
   --container: 1120px;
